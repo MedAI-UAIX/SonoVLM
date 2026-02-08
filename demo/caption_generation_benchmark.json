@@ -1,0 +1,242 @@
+[
+  {
+    "id": "case001.png",
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>你是一个超声专业人士，这是一张超声图像，请根据图像内容生成相应的超声描述"
+      },
+      {
+        "role": "assistant",
+        "content": "乳腺超声可见一扩张乳管，乳管内可见等回声团，内部回声不均，后方声影明显，周围组织层次清晰，回声无明显异常。"
+      }
+    ],
+    "images": [
+      "Data/public_data/BrEaST-Lesions_USG/case001.png"
+    ]
+  },
+  {
+    "id": "case002.png",
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>你是一个超声专业人士，这是一张超声图像，请根据图像内容生成相应的超声描述"
+      },
+      {
+        "role": "assistant",
+        "content": "乳腺腺体内可见一椭圆形囊实性病变，边界欠清晰，呈低回声，回声欠均。周围乳腺组织回声均匀，未见异常。"
+      }
+    ],
+    "images": [
+      "Data/public_data/BrEaST-Lesions_USG/case002.png"
+    ]
+  },
+  {
+    "id": "case003.png",
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>你是一个超声专业人士，这是一张超声图像，请根据图像内容生成相应的超声描述"
+      },
+      {
+        "role": "assistant",
+        "content": "乳腺内见一扩张乳管，内可见低回声区，周边为无回声，边界清楚，周围乳腺组织未见明显异常回声。"
+      }
+    ],
+    "images": [
+      "Data/public_data/BrEaST-Lesions_USG/case003.png"
+    ]
+  },
+   {
+    "id": "240_IM-0772-0072_anon.png",
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>你是一个超声专业人士，这是一张超声图像，请根据图像内容生成相应的超声描述"
+      },
+      {
+        "role": "assistant",
+        "content": "右肾形态正常，边界清，肾实质内可见单个无回声病变，形态规则、边界清晰，皮髓质分界清晰，肾盂及集合系统未见明显扩张。"
+      }
+    ],
+    "images": [
+      "Data/public_data/kidneyUS/240_IM-0772-0072_anon.png"
+    ]
+  },
+  {
+    "id": "242_IM-0007-0001_anon.png",
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>你是一个超声专业人士，这是一张超声图像，请根据图像内容生成相应的超声描述"
+      },
+      {
+        "role": "assistant",
+        "content": "左肾形态正常，边界清，肾实质回声均匀，皮髓质分界清晰，未见明显占位性病变或囊性结构，肾盂及集合系统无明显扩张。"
+      }
+    ],
+    "images": [
+      "Data/public_data/kidneyUS/242_IM-0007-0001_anon.png"
+    ]
+  },
+  {
+    "id": "246_IM-0328-0010_anon.png",
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>你是一个超声专业人士，这是一张超声图像，请根据图像内容生成相应的超声描述"
+      },
+      {
+        "role": "assistant",
+        "content": "肝-右侧移植肾横截面超声图像，肝实质回声均匀，边界清晰；右肾实质回声均匀，皮髓质分界清晰，未见明显占位性病变或囊性结构，肾盂及集合系统未见明显扩张。"
+      }
+    ],
+    "images": [
+      "Data/public_data/kidneyUS/246_IM-0328-0010_anon.png"
+    ]
+  },
+  {
+    "id": "17-38-18.jpg",
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>你是一个超声专业人士，这是一张超声图像，请根据图像内容生成相应的超声描述"
+      },
+      {
+        "role": "assistant",
+        "content": "动脉血管壁结构完整，未见明显断裂，内中膜增厚，未见明显附壁钙化，动脉壁可见局部增厚斑块，呈低回声，STENOSIS＜50%。"
+      }
+    ],
+    "images": [
+      "Data/public_data/CCA Ultrasound image database/17-38-18.jpg"
+    ]
+  },
+  {
+    "id": "17-38-30.jpg",
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>你是一个超声专业人士，这是一张超声图像，请根据图像内容生成相应的超声描述"
+      },
+      {
+        "role": "assistant",
+        "content": "动脉血管壁结构完整，未见明显断裂，管壁光滑，内中膜不厚，未见明显钙化、斑块及狭窄。"
+      }
+    ],
+    "images": [
+      "Data/public_data/CCA Ultrasound image database/17-38-30.jpg"
+    ]
+  },
+  {
+    "id": "17-40-25.jpg",
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>你是一个超声专业人士，这是一张超声图像，请根据图像内容生成相应的超声描述"
+      },
+      {
+        "role": "assistant",
+        "content": "动脉血管壁结构完整，未见明显断裂，管壁光滑，内中膜不厚，未见明显钙化、斑块及狭窄。"
+      }
+    ],
+    "images": [
+      "Data/public_data/CCA Ultrasound image database/17-40-25.jpg"
+    ]
+  },
+    {
+    "id": "334_1_0300.jpg",
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>你是一个超声专业人士，这是一张超声图像，请根据图像内容生成相应的超声描述"
+      },
+      {
+        "role": "assistant",
+        "content": "图像显示左侧甲状腺内见一低回声结节，实性，边界清晰，形态规则，内部回声均匀，无明显钙化及血流信号。整体回声较周围正常甲状腺组织稍低"
+      }
+    ],
+    "images": [
+      "Data/public_data/DDTI_classification/334_1_0300.jpg"
+    ]
+  },
+  {
+    "id": "334_2_0301.jpg",
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>你是一个超声专业人士，这是一张超声图像，请根据图像内容生成相应的超声描述"
+      },
+      {
+        "role": "assistant",
+        "content": "甲状腺左侧叶显示一低回声结节，边界不清晰，形态规整，内部回声不均匀，未见明显钙化"
+      }
+    ],
+    "images": [
+      "Data/public_data/DDTI_classification/334_2_0301.jpg"
+    ]
+  },
+  {
+    "id": "335_1_0302.jpg",
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>你是一个超声专业人士，这是一张超声图像，请根据图像内容生成相应的超声描述"
+      },
+      {
+        "role": "assistant",
+        "content": "甲状腺峡部可见一低回声结节，内部回声不均匀，边界尚清，形态略不规则，周围未见明显浸润或钙化，"
+      }
+    ],
+    "images": [
+      "Data/public_data/DDTI_classification/335_1_0302.jpg"
+    ]
+  },
+    {
+    "id": "f18.jpg",
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>你是一个超声专业人士，这是一张超声图像，请根据图像内容生成相应的超声描述"
+      },
+      {
+        "role": "assistant",
+        "content": "脾脏超声图像示，脾脏形态大小正常，边界清晰，回声均匀，未见明显占位性病变或异常回声区。"
+      }
+    ],
+    "images": [
+      "Data/public_data/US simulation & segmentation/f18.jpg"
+    ]
+  },
+  {
+    "id": "f19.jpg",
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>你是一个超声专业人士，这是一张超声图像，请根据图像内容生成相应的超声描述"
+      },
+      {
+        "role": "assistant",
+        "content": "脾脏超声图像示，脾脏形态大小正常，边界清晰，回声均匀，未见明显占位性病变或异常回声区。肾脏形态及大小正常，皮髓质分界清晰。肾实质回声均匀，无明显肿块或囊性病变，肾盂未见扩张。"
+      }
+    ],
+    "images": [
+      "Data/public_data/US simulation & segmentation/f19.jpg"
+    ]
+  },
+  {
+    "id": "f2.jpg",
+    "messages": [
+      {
+        "role": "user",
+        "content": "<image>你是一个超声专业人士，这是一张超声图像，请根据图像内容生成相应的超声描述"
+      },
+      {
+        "role": "assistant",
+        "content": "肝脏实质回声均匀，包膜平滑，未见明确病变。肝内胆管未见扩张。胆囊壁未见增厚，胆囊形态正常，腔内未见明确病变。"
+      }
+    ],
+    "images": [
+      "Data/public_data/US simulation & segmentation/f2.jpg"
+    ]
+  }
+]
