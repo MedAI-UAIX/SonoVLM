@@ -25,7 +25,7 @@ python swift_eval_v2.py \
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/SonoVLM.git
+git clone https://github.com/MedAI-UAIX/SonoVLM.git
 cd SonoVLM
 
 # Install dependencies
