@@ -12,13 +12,13 @@ A multimodal AI system for ultrasound analysis with capabilities in cross-organ 
 
 ---
 ## 🔥 Demo  
-<video controls>
-  <source src="VLM演示.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-## 📈 Technical Architecture  
-pass
-
+```bash
+cd demo
+python swift_eval_v2.py \
+    --model_path /path/to/SonoVLM_checkpoint \
+    --benchmark_file caption_generation_benchmark.json \
+    --output_dir ./results
+```
 ## 🚀 Getting Started
 
 ### 1. Installation
