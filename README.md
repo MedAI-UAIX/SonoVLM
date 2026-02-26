@@ -19,12 +19,19 @@ A multimodal AI system for ultrasound analysis with capabilities in cross-organ 
 ## 📈 Technical Architecture  
 pass
 
-## 🚀 Getting Started  
-**Note**: Code will be released publicly after publication of our paper.  
-<summary><b>1. Installation (Coming Soon) </b></summary>
-pass
+## 🚀 Getting Started
 
-<summary><b>2. Prepare your finetuning data</b></summary>
+### 1. Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/SonoVLM.git
+cd SonoVLM
+
+# Install dependencies
+pip install -r requirements.txt
+```
+### 2. Prepare your finetuning data
 
 Like LLaVA, we anticipate that the data will reside within a JSON file, composed of a collection of dictionaries. In this structure, each individual dictionary corresponds to a distinct sample.
 ```json
@@ -33,8 +40,7 @@ Like LLaVA, we anticipate that the data will reside within a JSON file, composed
         "id": "215168",
         "system_prompt": "You are a helpful assistant.",//Optional
         "image": [
-            "215168_1.jpeg",
-            "215168_2.jpeg"
+            "215168_1.jpeg"
         ],
         "description": "The bladder is slightly full, the bladder wall is continuous and intact, and no obvious abnormal echoes are seen inside.",
         "messages": [
