@@ -58,7 +58,7 @@ Like LLaVA, we anticipate that the data will reside within a JSON file, composed
 ]
 ```
 
-<summary><b>3. Perform finetuning</b></summary>
+### 2. Perform finetuning
 
 Stage 1: Aligner Fine-tuning
 
