@@ -20,7 +20,18 @@ python swift_eval_v2.py \
     --output_dir ./results
 ```
 ## 🚀 Getting Started
+## 📦 Dependencies
 
+### System Requirements
+
+| Component | Minimum Specification | Recommended Specification |
+|-----------|----------------------|---------------------------|
+| **OS** | Ubuntu 20.04 LTS | Ubuntu 20.04/22.04 LTS |
+| **GPU** | NVIDIA GPU with 24GB VRAM | NVIDIA A100 (40GB/80GB) or RTX 4090 (24GB) |
+| **CPU** | 8 cores | 16+ cores (Intel Xeon / AMD EPYC) |
+| **RAM** | 32GB | 64GB+ |
+| **Storage** | 50GB free space (SSD) | 200GB+ NVMe SSD |
+| **CUDA** | 11.8 | 12.1+ |
 ### 1. Installation
 
 ```bash
@@ -29,6 +40,8 @@ git clone https://github.com/MedAI-UAIX/SonoVLM.git
 cd SonoVLM
 
 # Install dependencies
+conda create -n sonovlm python=3.12
+conda activate sonovlm
 pip install -r requirements.txt
 ```
 ### 2. Prepare your finetuning data
