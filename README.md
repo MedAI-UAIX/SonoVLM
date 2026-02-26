@@ -45,7 +45,7 @@ conda activate sonovlm
 pip install -r requirements.txt
 ```
 ### 2. Prepare your finetuning data
-
+We use the SWIFT framework for training. For complete data format specifications, please refer to the [SWIFT Custom Dataset Documentation](https://swift.readthedocs.io/zh-cn/latest/Customization/Custom-dataset.html).
 Like LLaVA, we anticipate that the data will reside within a JSON file, composed of a collection of dictionaries. In this structure, each individual dictionary corresponds to a distinct sample.
 ```json
    [
@@ -70,8 +70,18 @@ Like LLaVA, we anticipate that the data will reside within a JSON file, composed
     }
 ]
 ```
+| Field           | Type        | Required | Description                                                              |
+| --------------- | ----------- | -------- | ------------------------------------------------------------------------ |
+| `id`            | string      | Yes      | Unique sample identifier                                                 |
+| `image`         | string/list | Yes      | Path(s) to image file(s). Use list for multi-image samples               |
+| `messages`      | list        | Yes      | Conversation history following OpenAI format                             |
+| `system_prompt` | string      | Optional | System-level instruction (alternative to `messages` with `role: system`) |
+| `description`   | string      | Optional | Additional text description (optional metadata)                          |
 
 ### 2. Perform finetuning
+We use [SWIFT](https://github.com/modelscope/ms-swift) (Scalable lightWeight Infrastructure for Fine-Tuning) for efficient multimodal model training. For complete training arguments and advanced configurations, please refer to the [SWIFT Pre-training and Fine-tuning Documentation](https://swift.readthedocs.io/zh-cn/latest/Instruction/Pre-training-and-Fine-tuning.html).
+
+Our training consists of three stages:
 
 Stage 1: Aligner Fine-tuning
 
