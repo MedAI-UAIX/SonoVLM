@@ -12,20 +12,40 @@ A multimodal AI system for ultrasound analysis with capabilities in cross-organ 
 
 ---
 ## 🔥 Demo  
-<video controls>
-  <source src="VLM演示.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-## 📈 Technical Architecture  
-pass
+```bash
+cd demo
+python swift_eval_v2.py \
+    --model_path /path/to/SonoVLM_checkpoint \
+    --benchmark_file caption_generation_benchmark.json \
+    --output_dir ./results
+```
+## 🚀 Getting Started
+## 📦 Dependencies
 
-## 🚀 Getting Started  
-**Note**: Code will be released publicly after publication of our paper.  
-<summary><b>1. Installation (Coming Soon) </b></summary>
-pass
+### System Requirements
 
-<summary><b>2. Prepare your finetuning data</b></summary>
+| Component | Minimum Specification | Recommended Specification |
+|-----------|----------------------|---------------------------|
+| **OS** | Ubuntu 20.04 LTS | Ubuntu 20.04/22.04 LTS |
+| **GPU** | NVIDIA GPU with 24GB VRAM | NVIDIA A100 (40GB/80GB) or RTX 4090 (24GB) |
+| **CPU** | 8 cores | 16+ cores (Intel Xeon / AMD EPYC) |
+| **RAM** | 32GB | 64GB+ |
+| **Storage** | 50GB free space (SSD) | 200GB+ NVMe SSD |
+| **CUDA** | 11.8 | 12.1+ |
+### 1. Installation
 
+```bash
+# Clone the repository
+git clone https://github.com/MedAI-UAIX/SonoVLM.git
+cd SonoVLM
+
+# Install dependencies
+conda create -n sonovlm python=3.12
+conda activate sonovlm
+pip install -r requirements.txt
+```
+### 2. Prepare your finetuning data
+We use the SWIFT framework for training. For complete data format specifications, please refer to the [SWIFT Custom Dataset Documentation](https://swift.readthedocs.io/zh-cn/latest/Customization/Custom-dataset.html).
 Like LLaVA, we anticipate that the data will reside within a JSON file, composed of a collection of dictionaries. In this structure, each individual dictionary corresponds to a distinct sample.
 ```json
    [
@@ -33,8 +53,7 @@ Like LLaVA, we anticipate that the data will reside within a JSON file, composed
         "id": "215168",
         "system_prompt": "You are a helpful assistant.",//Optional
         "image": [
-            "215168_1.jpeg",
-            "215168_2.jpeg"
+            "215168_1.jpeg"
         ],
         "description": "The bladder is slightly full, the bladder wall is continuous and intact, and no obvious abnormal echoes are seen inside.",
         "messages": [
@@ -51,8 +70,18 @@ Like LLaVA, we anticipate that the data will reside within a JSON file, composed
     }
 ]
 ```
+| Field           | Type        | Required | Description                                                              |
+| --------------- | ----------- | -------- | ------------------------------------------------------------------------ |
+| `id`            | string      | Yes      | Unique sample identifier                                                 |
+| `image`         | string/list | Yes      | Path(s) to image file(s). Use list for multi-image samples               |
+| `messages`      | list        | Yes      | Conversation history following OpenAI format                             |
+| `system_prompt` | string      | Optional | System-level instruction (alternative to `messages` with `role: system`) |
+| `description`   | string      | Optional | Additional text description (optional metadata)                          |
 
-<summary><b>3. Perform finetuning</b></summary>
+### 2. Perform finetuning
+We use [SWIFT](https://github.com/modelscope/ms-swift) (Scalable lightWeight Infrastructure for Fine-Tuning) for efficient multimodal model training. For complete training arguments and advanced configurations, please refer to the [SWIFT Pre-training and Fine-tuning Documentation](https://swift.readthedocs.io/zh-cn/latest/Instruction/Pre-training-and-Fine-tuning.html).
+
+Our training consists of three stages:
 
 Stage 1: Aligner Fine-tuning
 

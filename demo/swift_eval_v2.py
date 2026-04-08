@@ -12,12 +12,7 @@ from transformers import AutoProcessor, DINOv3ViTImageProcessorFast, LlavaForCon
     LlavaOnevisionForConditionalGeneration, MllamaForConditionalGeneration
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
-from SonoVLM_V2.models.internvl_3_5_moe import InternVL_MOE_ForConditionalGeneration
-from SonoVLM_V2.models.internvl_3_5_moe_usfm_512 import InternVL_MOE_USFM_512_ForConditionalGeneration
-from SonoVLM_V2.models.lingshu_multi_vision import Multi_Vision_ForConditionalGeneration
-from SonoVLM_V2.models.qwen2_vl_continued_moe import Qwen2VLMOEForConditionalGeneration
-from SonoVLM_V2.collators.datacollator_apply_chat_template import InternVLProcessor_Custom
-from SonoVLM_V2.collators.datasetV2 import LazySupervisedDatasetV2
+
 from custom_dataset import EvalDataset
 
 from swift.llm import (
