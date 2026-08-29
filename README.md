@@ -81,8 +81,6 @@ Like LLaVA, we anticipate that the data will reside within a JSON file, composed
 ### 2. Perform finetuning
 We use [SWIFT](https://github.com/modelscope/ms-swift) (Scalable lightWeight Infrastructure for Fine-Tuning) for efficient multimodal model training. For complete training arguments and advanced configurations, please refer to the [SWIFT Pre-training and Fine-tuning Documentation](https://swift.readthedocs.io/zh-cn/latest/Instruction/Pre-training-and-Fine-tuning.html).
 
-Our training consists of three stages:
-
 Stage 1: Aligner Fine-tuning
 
 This stage freezes the ViT and LLM components, only fine-tuning the alignment module to establish basic cross-modal mapping.
