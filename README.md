@@ -1,4 +1,4 @@
-# SonoVLM: A Generalist Ultrasound Vision-Language Model  
+# SonoCopilot: A Generalist Ultrasound Vision-Language Model  
 
 
 A multimodal AI system for ultrasound analysis with capabilities in cross-organ understanding, abnormality detection, diagnostic reasoning, structured reporting, and patient-centric dialogue.
@@ -15,7 +15,7 @@ A multimodal AI system for ultrasound analysis with capabilities in cross-organ 
 ```bash
 cd demo
 python swift_eval_v2.py \
-    --model_path /path/to/SonoVLM_checkpoint \
+    --model_path /path/to/SonoCopilot_checkpoint \
     --benchmark_file caption_generation_benchmark.json \
     --output_dir ./results
 ```
@@ -36,12 +36,12 @@ python swift_eval_v2.py \
 
 ```bash
 # Clone the repository
-git clone https://github.com/MedAI-UAIX/SonoVLM.git
-cd SonoVLM
+git clone https://github.com/MedAI-UAIX/SonoCopilot.git
+cd SonoCopilot
 
 # Install dependencies
-conda create -n sonovlm python=3.12
-conda activate sonovlm
+conda create -n SonoCopilot python=3.12
+conda activate SonoCopilot
 pip install -r requirements.txt
 ```
 ### 2. Prepare your finetuning data
