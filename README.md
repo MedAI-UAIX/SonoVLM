@@ -169,51 +169,6 @@ swift sft \
 
 ```
 
-Stage 3: Modeling of human-in-the-loop clinical reasoning
-
-```bash
-
-NNODES=1 \
-NODE_RANK=0 \
-NPROC_PER_NODE=8 \
-MAX_PIXELS=153664 \
-CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 \
-
-swift sft \
- --model /path/to/stage2_checkpoint \
-    --model_type qwen2_5_vl \
-    --template qwen2_5_vl \
-    --tuner_type lora\
-    --lora_rank 32 \
-    --lora_alpha 64 \
-    --target_modules all-linear \
-    --dataset 'teacher_generated_data.jsonl'\
-    --load_from_cache_file true \
-    --split_dataset_ratio 0.01 \
-    --torch_dtype bfloat16 \
-    --attn_impl flash_attention_2 \
-    --freeze_vit false \
-    --freeze_llm false \
-    --freeze_aligner false \
-    --num_train_epochs 1 \
-    --per_device_train_batch_size 2 \
-    --learning_rate 1e-4 \
-    --gradient_accumulation_steps 8 \
-    --eval_steps -1 \
-    --save_steps 1000 \
-    --save_total_limit 10 \
-    --logging_steps 5 \
-    --max_length 32768\
-    --output_dir output \
-    --warmup_ratio 0.05 \
-    --dataloader_num_workers 16 \
-    --dataset_num_proc 128 \
-    --deepspeed zero3 \
-    --use_dora True \
-    --padding_free True \
-    --packing True
-
-```
 
 4. Inference (CLI)
 
