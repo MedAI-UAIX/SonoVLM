@@ -195,7 +195,7 @@ MAX_PIXELS=153664 \
 VIDEO_MAX_PIXELS=153664 \
 FPS_MAX_FRAMES=768\
 swift deploy \
-    --model /path/to/stage3_checkpoint \
+    --model /path/to/stage2_checkpoint \
     --infer_backend vllm \
     --vllm_gpu_memory_utilization 0.9 \
     --vllm_max_model_len 32768 \
