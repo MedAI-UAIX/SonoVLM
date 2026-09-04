@@ -89,10 +89,9 @@ This stage freezes the ViT and LLM components, only fine-tuning the alignment mo
 NNODES=1 \
 NODE_RANK=0 \
 NPROC_PER_NODE=8 \
-MAX_PIXELS=153664 \
 CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 \
 swift sft \
-    --model /path/to/Lingshu-7B \
+    --model lingshu-medical-mllm/Lingshu-7B \
     --model_type qwen2_5_vl \
     --tuner_type full \
     --dataset xxx  \
@@ -129,7 +128,6 @@ This stage uses LoRA to fine-tune the entire model  to optimize cross-modal unde
 NNODES=1 \
 NODE_RANK=0 \
 NPROC_PER_NODE=8 \
-MAX_PIXELS=153664 \
 CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 \
 swift sft \
     --model /path/to/stage1_checkpoint \
@@ -191,8 +189,6 @@ Deploy the model as a service with vLLM for high-throughput inference, supportin
 ```bash
 
 CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 \
-MAX_PIXELS=153664 \
-VIDEO_MAX_PIXELS=153664 \
 FPS_MAX_FRAMES=768\
 swift deploy \
     --model /path/to/stage2_checkpoint \
