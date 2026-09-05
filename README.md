@@ -11,14 +11,7 @@ A multimodal AI system for ultrasound analysis with capabilities in cross-organ 
 > 📌 **Code is now publicly available** 
 
 ---
-## 🔥 Demo  
-```bash
-cd demo
-python swift_eval_v2.py \
-    --model_path /path/to/SonoCopilot_checkpoint \
-    --benchmark_file caption_generation_benchmark.json \
-    --output_dir ./results
-```
+
 ## 🚀 Getting Started
 ## 📦 Dependencies
 
@@ -32,7 +25,7 @@ python swift_eval_v2.py \
 | **RAM** | 32GB | 64GB+ |
 | **Storage** | 50GB free space (SSD) | 200GB+ NVMe SSD |
 | **CUDA** | 11.8 | 12.1+ |
-### 1. Installation
+### Installation
 
 ```bash
 # Clone the repository
@@ -44,7 +37,55 @@ conda create -n SonoCopilot python=3.12
 conda activate SonoCopilot
 pip install -r requirements.txt
 ```
-### 2. Prepare your finetuning data
+
+## Model Download and vLLM Deployment
+
+### Download Model Weights
+
+The SonoCopilot model weights are open-sourced on Hugging Face. You can download them as follows:
+
+```bash
+# Install huggingface-hub (if not already installed)
+pip install huggingface-hub
+
+# Download the full model weights
+huggingface-cli download MedAIusai/SonoCopilot --local-dir /path/to/SonoCopilot_checkpoint
+```
+## Deploy with vLLM
+
+We recommend using vLLM for efficient inference. Below is a complete deployment command example:
+
+```bash
+CUDA_VISIBLE_DEVICES=2 setsid vllm serve /path/to/SonoCopilot_checkpoint \
+    --tensor-parallel-size 1 \
+    --gpu-memory-utilization 0.9 \
+    --max-model-len 20000 \
+    --port 7000 \
+    --limit-mm-per-prompt '{"image": 50}' \
+    > /path/to/deploy.log 2>&1 &
+```
+## Verify Deployment
+After the service starts, you can verify it is running correctly with:
+Check service health
+```bash
+curl http://localhost:7000/health
+tail -f /path/to/deploy.log
+```
+## 🔥 Demo Run
+After deployment, you can run the evaluation demo with:
+```bash
+cd demo
+python swift_eval_v2.py \
+    --model_path /path/to/SonoCopilot_checkpoint \
+    --benchmark_file caption_generation_benchmark.json \
+    --output_dir ./results
+```
+
+
+# Perform finetuning
+We use [SWIFT](https://github.com/modelscope/ms-swift) (Scalable lightWeight Infrastructure for Fine-Tuning) for efficient multimodal model training. For complete training arguments and advanced configurations, please refer to the [SWIFT Pre-training and Fine-tuning Documentation](https://swift.readthedocs.io/zh-cn/latest/Instruction/Pre-training-and-Fine-tuning.html).
+
+### Prepare your finetuning data
 We use the SWIFT framework for training. For complete data format specifications, please refer to the [SWIFT Custom Dataset Documentation](https://swift.readthedocs.io/zh-cn/latest/Customization/Custom-dataset.html).
 Like LLaVA, we anticipate that the data will reside within a JSON file, composed of a collection of dictionaries. In this structure, each individual dictionary corresponds to a distinct sample.
 ```json
@@ -78,8 +119,6 @@ Like LLaVA, we anticipate that the data will reside within a JSON file, composed
 | `system_prompt` | string      | Optional | System-level instruction (alternative to `messages` with `role: system`) |
 | `description`   | string      | Optional | Additional text description (optional metadata)                          |
 
-### 2. Perform finetuning
-We use [SWIFT](https://github.com/modelscope/ms-swift) (Scalable lightWeight Infrastructure for Fine-Tuning) for efficient multimodal model training. For complete training arguments and advanced configurations, please refer to the [SWIFT Pre-training and Fine-tuning Documentation](https://swift.readthedocs.io/zh-cn/latest/Instruction/Pre-training-and-Fine-tuning.html).
 
 Stage 1: Aligner Fine-tuning
 
@@ -166,7 +205,7 @@ swift sft \
 ```
 
 
-4. Inference (CLI)
+Inference (CLI)
 
 Run inference with the trained model using CLI, supporting batch inference on validation datasets:
 
@@ -181,8 +220,7 @@ swift infer \
     --val_dataset <dataset-path> \
     --max_batch_size 1
 ```
-
-5. Deployment (vLLM Acceleration)
+Deployment (vLLM Acceleration)
 
 Deploy the model as a service with vLLM for high-throughput inference, supporting multi-GPU tensor parallelism:
 
